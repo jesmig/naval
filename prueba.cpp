@@ -45,8 +45,8 @@ cout<<endl;
 for(int j=0;j<10;j++)// esto es un ciclo for anidado para mostrar el mapa osea ira cargadno las casillas	
 {
 cout<<mar[i][j];}
-}
-	
+	 
+	 
 srand(time(NULL));
 
 n=((rand()%7)+1);
@@ -68,7 +68,12 @@ mar[n3][n4]=2
 
 n5=((rand()%9)+1);
 n6=((rand()%9)+1);
-mar[n5][n6]=3;
+mar[n5][n6]=3;	 
+	 
+	 
+}
+	
+
 
 
 
