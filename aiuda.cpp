@@ -132,8 +132,19 @@ void tableroUpdate()
     {
       if (mar[i][j] == 5)
       {
-        // printf("*");
-        cout << "*";
+      	cout<<"*";
+      	if(mar[i][j]==2){
+		cout<<"*";
+         
+		 if(mar[i+1][j]==2){
+		 	cout << "*";
+		 }else{
+		 	mar[i-1][j];
+		 	cout<<"*";
+		 } 	
+        	
+		}
+       
       }
       else if (mar[i][j] == 9)
       {
@@ -222,8 +233,8 @@ int comparacion()
   int coordenada2;
   coordenada1 = fila();
   coordenada2 = columna();
-  int contador = 10;
-  mar[coordenada2][coordenada1];
+
+  mar[coordenada1][coordenada2];
 
   if (mar[coordenada2][coordenada1] != 0)
   {
@@ -258,6 +269,7 @@ int main()
   int contador = 10;
 
   tablero();
+  
 
   tiro1 = comparacion();
   tiro2 = comparacion();
@@ -271,3 +283,7 @@ int main()
   tiro10 = comparacion();
   tiro11 = final();
 }
+
+
+
+
