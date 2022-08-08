@@ -86,7 +86,7 @@ void randoms()
     if (mar[n7][n6] == 1 || mar[n5][n6] == 1)
     {
       boat = 1;
-      n12 = n5 = generar2();
+      n12 = generar2();
       n13 = generar2();
       n7 = n12 + 1;
       mar[n7][n13] = 2;
@@ -133,18 +133,6 @@ void tableroUpdate()
       if (mar[i][j] == 5)
       {
       	cout<<"*";
-      	if(mar[i][j]==2){
-		cout<<"*";
-         
-		 if(mar[i+1][j]==2){
-		 	cout << "*";
-		 }else{
-		 	mar[i-1][j];
-		 	cout<<"*";
-		 } 	
-        	
-		}
-       
       }
       else if (mar[i][j] == 9)
       {
@@ -207,11 +195,6 @@ int fila()
 
   return (filatiro);
 }
-int final()
-{
-  system("cls");
-  printf("se acabo we");
-}
 
 int columna()
 {
@@ -229,26 +212,51 @@ int columna()
 
 int comparacion()
 {
-  int coordenada1;
-  int coordenada2;
-  coordenada1 = fila();
-  coordenada2 = columna();
+
+  int coordenada1 = fila();
+  int coordenada2 = columna();
 
   mar[coordenada1][coordenada2];
 
-  if (mar[coordenada2][coordenada1] != 0)
+  if (mar[coordenada1][coordenada2]==2)
   {
-    mar[coordenada2][coordenada1] = 5;
+    mar[coordenada1][coordenada2]=5;
+ 
+  }
+  if(mar[coordenada1+1][coordenada2]==2){
+    mar[coordenada1+1][coordenada2]=5;	
+	}else if(mar[coordenada1-1][coordenada2]==2) {
+		mar[coordenada1-1][coordenada2]=5;
+	}
     system("cls");
     printf("le diste a un barco \n");
     tableroUpdate();
+  
+  if (mar[coordenada1][coordenada2]==1)
+  {
+    mar[coordenada1][coordenada2]=5;
+ 
   }
+  if(mar[coordenada1][coordenada2+5]==1){
+    mar[coordenada1][coordenada2+5]=5;	
+	}else if(mar[coordenada1][coordenada2-5]==2) {
+		mar[coordenada1][coordenada2-5]=5;
+	}
+    system("cls");
+    printf("le diste a un barco \n");
+    tableroUpdate();
+  
+  
+  
+  
+  
+  
   if (mar[coordenada2][coordenada1] == 0)
   {
     mar[coordenada2][coordenada1] = 9;
     system("cls");
     tableroUpdate();
-    printf("fallaste el tiro animal \n");
+    printf("fallaste el tiro \n");
   }
 }
 
@@ -281,9 +289,5 @@ int main()
   tiro8 = comparacion();
   tiro9 = comparacion();
   tiro10 = comparacion();
-  tiro11 = final();
+  
 }
-
-
-
-
