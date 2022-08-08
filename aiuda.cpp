@@ -132,7 +132,7 @@ void tableroUpdate()
     {
       if (mar[i][j] == 5)
       {
-      	cout<<"*";
+        cout << "*";
       }
       else if (mar[i][j] == 9)
       {
@@ -215,43 +215,59 @@ int comparacion()
 
   int coordenada1 = fila();
   int coordenada2 = columna();
-      //filas       columnas//
+  // filas       columnas//
   mar[coordenada1][coordenada2];
 
-  if (mar[coordenada1][coordenada2]==2)
+  if (mar[coordenada1][coordenada2] == 2)
   {
-    mar[coordenada1][coordenada2]=5;
-    
-   if(mar[coordenada1+1][coordenada2]==2){
-    mar[coordenada1+1][coordenada2]=5;	
-	}else if(mar[coordenada1-1][coordenada2]==2) {
-		mar[coordenada1-1][coordenada2]=5;
-	} 
-  }
-  
+    mar[coordenada1][coordenada2] = 5;
+
+    if (mar[coordenada1 + 1][coordenada2] == 2)
+    {
+      mar[coordenada1 + 1][coordenada2] = 5;
+    }
+    else if (mar[coordenada1 - 1][coordenada2] == 2)
+    {
+      mar[coordenada1 - 1][coordenada2] = 5;
+    }
     system("cls");
     printf("le diste a un barco \n");
-    tableroUpdate();
-  
-  if (mar[coordenada1][coordenada2]==1)
-  {
-    mar[coordenada1][coordenada2]=5;
- if(mar[coordenada1][coordenada2+5]==1){
-    mar[coordenada1][coordenada2+5]=5;	
-	}else {
-	mar[coordenada1][coordenada2-5]=5;
-	}
   }
-  
+
+  if (mar[coordenada1][coordenada2] == 3)
+  {
+    mar[coordenada1][coordenada2] = 3;
+  }
+
+  // tableroUpdate();
+
+  if (mar[coordenada1][coordenada2] == 1)
+  {
+    mar[coordenada1][coordenada2] = 5;
+    if (mar[coordenada1][coordenada2 - 1] == 1)
+    {
+      mar[coordenada1][coordenada2 - 1] = 5;
+
+      if (mar[coordenada1][coordenada2 - 2] == 1)
+      {
+        mar[coordenada1][coordenada2 - 2] = 5;
+      }
+      else
+      {
+        mar[coordenada1][coordenada2 + 1] = 5;
+      }
+    }
+    else
+    {
+      mar[coordenada1][coordenada2 + 1] = 5;
+      mar[coordenada1][coordenada2 + 2] = 5;
+    }
     system("cls");
     printf("le diste a un barco \n");
-    tableroUpdate();
-  
-  
-  
-  
-  
-  
+  }
+
+  tableroUpdate();
+
   if (mar[coordenada1][coordenada2] == 0)
   {
     mar[coordenada1][coordenada2] = 9;
@@ -278,7 +294,6 @@ int main()
   int contador = 10;
 
   tablero();
-  
 
   tiro1 = comparacion();
   tiro2 = comparacion();
@@ -290,5 +305,4 @@ int main()
   tiro8 = comparacion();
   tiro9 = comparacion();
   tiro10 = comparacion();
-  
 }
