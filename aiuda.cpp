@@ -215,19 +215,20 @@ int comparacion()
 
   int coordenada1 = fila();
   int coordenada2 = columna();
-
+      //filas       columnas//
   mar[coordenada1][coordenada2];
 
   if (mar[coordenada1][coordenada2]==2)
   {
     mar[coordenada1][coordenada2]=5;
- 
-  }
-  if(mar[coordenada1+1][coordenada2]==2){
+    
+   if(mar[coordenada1+1][coordenada2]==2){
     mar[coordenada1+1][coordenada2]=5;	
 	}else if(mar[coordenada1-1][coordenada2]==2) {
 		mar[coordenada1-1][coordenada2]=5;
-	}
+	} 
+  }
+  
     system("cls");
     printf("le diste a un barco \n");
     tableroUpdate();
@@ -235,13 +236,13 @@ int comparacion()
   if (mar[coordenada1][coordenada2]==1)
   {
     mar[coordenada1][coordenada2]=5;
- 
-  }
-  if(mar[coordenada1][coordenada2+5]==1){
+ if(mar[coordenada1][coordenada2+5]==1){
     mar[coordenada1][coordenada2+5]=5;	
-	}else if(mar[coordenada1][coordenada2-5]==2) {
-		mar[coordenada1][coordenada2-5]=5;
+	}else {
+	mar[coordenada1][coordenada2-5]=5;
 	}
+  }
+  
     system("cls");
     printf("le diste a un barco \n");
     tableroUpdate();
@@ -251,9 +252,9 @@ int comparacion()
   
   
   
-  if (mar[coordenada2][coordenada1] == 0)
+  if (mar[coordenada1][coordenada2] == 0)
   {
-    mar[coordenada2][coordenada1] = 9;
+    mar[coordenada1][coordenada2] = 9;
     system("cls");
     tableroUpdate();
     printf("fallaste el tiro \n");
